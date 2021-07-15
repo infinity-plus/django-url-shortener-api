@@ -2,6 +2,9 @@
 
 A simple Postgres backed URL Shortener API made using Django REST Framework.
 
+[![DeepSource](https://deepsource.io/gh/infinity-plus/django-url-shortener-api.svg/?label=active+issues&token=_l-MfykM4kr2fFPN2lVV8afr)](https://deepsource.io/gh/infinity-plus/django-url-shortener-api/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/infinity-plus/django-url-shortener-api.svg/?label=resolved+issues&token=_l-MfykM4kr2fFPN2lVV8afr)](https://deepsource.io/gh/infinity-plus/django-url-shortener-api/?ref=repository-badge)
+
 ## `shortenedURL` Object
 
 A single `shortenedURL` in JSON looks as:
