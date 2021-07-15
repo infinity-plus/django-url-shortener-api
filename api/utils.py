@@ -15,6 +15,7 @@ def create_random_code(chars=AVAIABLE_CHARS):
 
 
 def create_shortened_url(model_instance):
+    """Create a UNIQUE shortened URL."""
     random_code = create_random_code()
     # Gets the model class
     model_class = model_instance.__class__
