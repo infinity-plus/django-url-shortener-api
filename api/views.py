@@ -24,7 +24,7 @@ def shortenedURL_list(request):
         serializer = ShortenedURLSerializer(shortenedURLs, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         data = JSONParser().parse(request)
         serializer = ShortenedURLSerializer(data=data)
         if serializer.is_valid():
@@ -45,7 +45,7 @@ def shortenedURL_detail(request, short_url):
             serializer = ShortenedURLSerializer(shortenedURL)
             return JsonResponse(serializer.data)
 
-        elif request.method == 'PUT':
+        if request.method == 'PUT':
             data = JSONParser().parse(request)
             serializer = ShortenedURLSerializer(shortenedURL, data=data)
             if serializer.is_valid():
@@ -53,7 +53,7 @@ def shortenedURL_detail(request, short_url):
                 return JsonResponse(serializer.data)
             return JsonResponse(serializer.errors, status=400)
 
-        elif request.method == 'DELETE':
+        if request.method == 'DELETE':
             shortenedURL.delete()
             return HttpResponse(status=204)
     except ShortenedURL.DoesNotExist:
