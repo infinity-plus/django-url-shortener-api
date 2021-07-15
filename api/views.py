@@ -7,18 +7,14 @@ from .serializers import ShortenedURLSerializer
 
 
 def home(request):
-    """
-    Get Status of the API
-    """
+    """Get Status of the API"""
     response_status = {'text': "API is up"}
     return JsonResponse(response_status, status=200)
 
 
 @csrf_exempt
 def shortenedURL_list(request):
-    """
-    List all code shortenedURLs, or create a new shortenedURL.
-    """
+    """List all shortenedURLs, or create a new shortenedURL."""
     if request.method == 'GET':
         shortenedURLs = ShortenedURL.objects.all()
         serializer = ShortenedURLSerializer(shortenedURLs, many=True)
@@ -36,9 +32,7 @@ def shortenedURL_list(request):
 
 @csrf_exempt
 def shortenedURL_detail(request, short_url):
-    """
-    Retrieve, update or delete a code shortenedURL.
-    """
+    """Retrieve, update or delete a code shortenedURL."""
     try:
         shortenedURL = ShortenedURL.objects.get(short_url=short_url)
         if request.method == 'GET':
@@ -61,9 +55,7 @@ def shortenedURL_detail(request, short_url):
 
 
 def redirect_view(request, short_url):
-    """
-    Redirect the short URL to link URL
-    """
+    """Redirect the short URL to link URL"""
     try:
         if request.method == 'GET':
             shortener = ShortenedURL.objects.get(short_url=short_url)

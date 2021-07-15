@@ -1,6 +1,4 @@
-"""
-Utilities for Shortener
-"""
+"""Utilities for Shortener"""
 from django.conf import settings
 from random import choice
 from string import ascii_letters, digits
@@ -12,9 +10,7 @@ AVAIABLE_CHARS = ascii_letters + digits
 
 
 def create_random_code(chars=AVAIABLE_CHARS):
-    """
-    Creates a random string with the predetermined size
-    """
+    """Creates a random string with the predetermined size"""
     return "".join([choice(chars) for _ in range(SIZE)])
 
 
