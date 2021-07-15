@@ -9,6 +9,16 @@ from .models import ShortenedURL
 from .serializers import ShortenedURLSerializer
 
 
+def home(request):
+  """
+  Get Status of the API
+  """
+  response_status = {
+    'text': "API is up"
+  }
+  return JsonResponse(response_status, status=200)
+
+
 @csrf_exempt
 def shortenedURL_list(request):
     """
