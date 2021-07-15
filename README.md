@@ -2,6 +2,19 @@
 
 A simple Postgres backed URL Shortener API made using Django REST Framework.
 
+## `shortenedURL` Object
+
+A single `shortenedURL` in JSON looks as:
+
+```json
+{
+    "created": "2021-07-14T20:06:35.314848+05:30",
+    "long_url": "https://yaifoundation.org",
+    "short_url": "site",
+    "times_visited": 32
+}
+```
+
 ## Endpoints
 
 |     Endpoint    | Request |               Response                 |
