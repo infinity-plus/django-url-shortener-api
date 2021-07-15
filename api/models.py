@@ -11,10 +11,14 @@ class ShortenedURL(models.Model):
     class Meta:
         ordering = ['created']
 
-    def save(self, *args, **kwargs):
+    def save(self,
+             force_insert=False,
+             force_update=False,
+             using=None,
+             update_fields=None):
         # If the short url wasn't specified
         if not self.short_url:
             # We pass the model instance that is being saved
             self.short_url = create_shortened_url(self)
 
-        super().save(*args, **kwargs)
+        super().save(force_insert, force_update, using, update_fields)
